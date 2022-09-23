@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: streamlit
-          image: public.ecr.aws/z1l0c6l7/simpleapp
+          image: public.ecr.aws/z1l0c6l7/simpleapp:17
           imagePullPolicy: Always
           ports:
             - containerPort: 8501
