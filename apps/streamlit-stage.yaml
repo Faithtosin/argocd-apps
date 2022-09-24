@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: streamlit
+  name: streamlit-stage
   namespace: argocd
 spec:
   project: default
@@ -17,7 +17,7 @@ spec:
     path: simpleapp-public/overlays/stage
   destination:
     server: https://kubernetes.default.svc
-    namespace: streamlit
+    #namespace: streamlit
   syncPolicy:
     automated:
       prune: true
