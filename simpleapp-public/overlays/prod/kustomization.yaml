@@ -5,6 +5,7 @@ commonLabels:
 
 namespace: streamlit-prod
 resources:
+  - namespace.yaml
   - ../../base
 
 # components:
