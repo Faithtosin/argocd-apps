@@ -13,7 +13,7 @@ spec:
         beep: boop
 
     repoURL: https://github.com/Faithtosin/argocd-apps.git
-    targetRevision: HEAD
+    targetRevision: stage
     path: simpleapp-public/overlays/stage
   destination:
     server: https://kubernetes.default.svc
