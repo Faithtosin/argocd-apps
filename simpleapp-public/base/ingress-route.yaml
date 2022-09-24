@@ -1,0 +1,18 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  namespace: streamlit-stage
+  name: streamlit-ingressroute
+  labels:
+    app.kubernetes.io/type: traefik
+spec:
+  entryPoints:
+    - websecure
+  routes:
+    - match: Host(`streamlit-stage.githubcode.space`)
+      kind: Rule
+      services:
+        - name: streamlit-service
+          port: 80
+  tls:
+    secretName: letsencrypt-production-tls

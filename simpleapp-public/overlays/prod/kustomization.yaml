@@ -7,7 +7,13 @@ namespace: streamlit-prod
 resources:
   - namespace.yaml
   - ../../base
-
+patches:
+  - patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`streamlit-prod.githubcode.space`)   
+    target:
+      labelSelector: "app.kubernetes.io/type=traefik"
 # components:
 #   - ../../components/external_db
 #   - ../../components/ldap
