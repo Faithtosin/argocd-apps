@@ -4,6 +4,7 @@ commonLabels:
 
 
 resources:
+- limit.yaml
 - deployment.yaml
 - service.yaml
 - ingress-route.yaml
