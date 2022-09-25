@@ -5,12 +5,6 @@ commonLabels:
 
 namespace: streamlit-prod
 
-#Container image, uses image name to match the image in the base
-images:
-- name: public.ecr.aws/z1l0c6l7/simpleapp
-  newTag: "17"
-  #newName: my-registry/my-postgres
-
 resources:
   - namespace.yaml
   - ../../base
