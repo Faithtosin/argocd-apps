@@ -5,17 +5,17 @@ commonLabels:
 
 namespace: streamlit-stage
 
-#Container image, uses image name to match the image in the base
-images:
-- name: public.ecr.aws/z1l0c6l7/simpleapp
-  newTag: 3768f420d510718a3a2945c642038d5ad41bfb3d
-  #newName: my-registry/my-postgres
-
 resources:
 - namespace.yaml
 - ../../base
 patches:
-- patch: "- op: replace\n  path: /spec/routes/0/match\n  value: Host(`streamlit-stage.githubcode.space`)
-    \  "
-  target:
-    labelSelector: app.kubernetes.io/type=traefik
+  - patch: |-
+      - op: replace
+        path: /spec/routes/0/match
+        value: Host(`streamlit-stage.githubcode.space`)   
+    target:
+      labelSelector: "app.kubernetes.io/type=traefik"
+# components:
+#   - ../../components/external_db
+#   - ../../components/ldap
+
