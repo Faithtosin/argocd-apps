@@ -5,7 +5,7 @@ commonLabels:
 #Container image, uses image name to match the image in the base
 images:
 - name: public.ecr.aws/z1l0c6l7/simpleapp
-  newTag: "18"
+  newTag: df1013fb6d6dd696f83b0f977d082128b3682442
   #newName: my-registry/my-postgres
 
 resources:
@@ -13,3 +13,5 @@ resources:
 - deployment.yaml
 - service.yaml
 - ingress-route.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
