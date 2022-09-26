@@ -4,5 +4,5 @@ commonLabels:
 
 
 resources:
-- streamlit-stage.yaml
+- streamlit-staging.yaml
 - streamlit-prod.yaml

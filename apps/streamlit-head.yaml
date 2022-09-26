@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: streamlit-head
+  namespace: argocd
+spec:
+  project: default
+  source:
+    kustomize:
+      commonLabels:
+        controller: argocd
+      commonAnnotations:
+        beep: boop
+
+    repoURL: https://github.com/Faithtosin/argocd-apps.git
+    targetRevision: HEAD
+    path: simpleapp-public/overlays/head
+  destination:
+    server: https://kubernetes.default.svc
+    #namespace: streamlit
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
