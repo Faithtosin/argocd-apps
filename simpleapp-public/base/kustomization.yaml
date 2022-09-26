@@ -2,8 +2,16 @@
 commonLabels:
   app: streamlit
 
+#Container image, uses image name to match the image in the base
+images:
+- name: public.ecr.aws/z1l0c6l7/simpleapp
+  newTag: 530b2f108c8d3347b31d0988535e1b145b0d5f8c
+  #newName: my-registry/my-postgres
 
 resources:
+- limit.yaml
 - deployment.yaml
 - service.yaml
 - ingress-route.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
