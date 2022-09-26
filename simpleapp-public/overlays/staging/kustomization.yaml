@@ -8,20 +8,14 @@ namespace: streamlit-staging
 #Container image, uses image name to match the image in the base
 images:
 - name: public.ecr.aws/z1l0c6l7/simpleapp
-  newTag: "18"
+  newTag: 7ec9cf6a6546375844d6ea80a3148bae063132c9
   #newName: my-registry/my-postgres
 
 resources:
 - namespace.yaml
 - ../../base
 patches:
-  - patch: |-
-      - op: replace
-        path: /spec/routes/0/match
-        value: Host(`streamlit-staging.githubcode.space`)   
-    target:
-      labelSelector: "app.kubernetes.io/type=traefik"
-# components:
-#   - ../../components/external_db
-#   - ../../components/ldap
-
+- patch: "- op: replace\n  path: /spec/routes/0/match\n  value: Host(`streamlit-staging.githubcode.space`)
+    \  "
+  target:
+    labelSelector: app.kubernetes.io/type=traefik
