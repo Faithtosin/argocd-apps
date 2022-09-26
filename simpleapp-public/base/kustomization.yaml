@@ -5,7 +5,7 @@ commonLabels:
 #Container image, uses image name to match the image in the base
 images:
 - name: public.ecr.aws/z1l0c6l7/simpleapp
-  newTag: 530b2f108c8d3347b31d0988535e1b145b0d5f8c
+  newTag: b007df8000c0779c44fe739436fc570944d86549
   #newName: my-registry/my-postgres
 
 resources:
