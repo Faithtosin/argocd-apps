@@ -8,7 +8,7 @@ namespace: streamlit-head
 #Container image, uses image name to match the image in the base
 images:
 - name: public.ecr.aws/z1l0c6l7/simpleapp
-  newTag: d2dd32398c3ab1b63adeccaa0945bececf4a1904
+  newTag: fca5cf4d2c175cc7f5d56269276594dc8aab5399
   #newName: my-registry/my-postgres
 
 resources:
